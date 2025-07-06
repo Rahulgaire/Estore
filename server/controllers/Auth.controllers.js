@@ -2,7 +2,7 @@ const User = require("../models/User.models");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const sendOTP = require("../middleware/nodemailer");
+const sendOTP = require('../middleware/Nodemailer')
 
 const generatToken = (id, role) => {
   jwt.sign({ id: id, role: role }, process.env.JWT_SECRET, {
