@@ -9,8 +9,8 @@ const authenticated = require("../middleware/headers");
 const cartRoute = express.Router();
 
 cartRoute.post("/add-to-cart", authenticated, addToCart);
-cartRoute.post("/remove-from-cart", authenticated, removeFromCart);
-cartRoute.post("/update-cart", authenticated, updateQuantity);
-cartRoute.post("/get-cart", authenticated, getCartDetails);
+cartRoute.delete("/remove-from-cart/:id", authenticated, removeFromCart);
+cartRoute.patch("/update-cart", authenticated, updateQuantity);
+cartRoute.get("/get-cart", authenticated, getCartDetails);
 
 module.exports = cartRoute;
